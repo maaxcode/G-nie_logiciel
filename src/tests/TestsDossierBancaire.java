@@ -1,6 +1,8 @@
 package tests;
 
 import static org.junit.Assert.*;
+
+import myPackage.Compte_courant;
 import myPackage.DossierBancaire;
 
 import org.junit.Test;
@@ -32,5 +34,24 @@ public class TestsDossierBancaire {
 		assertEquals(0,dossier.get_solde(),0);
 
 }
+	
+	@Test
+	public void deposer2()
+	{
+		
+		Compte_courant cc = new Compte_courant(0);
+		cc.Addsolde(100);
+		assertEquals(100,cc.getsolde(),0);
+	}
+		
+	@Test
+	public void constructeur_cc()
+	{
+			
+		Compte_courant cc = new Compte_courant(20);
+		assertEquals(20,cc.getsolde(),0);
+			
+}
+	
 	
 }
