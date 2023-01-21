@@ -72,4 +72,24 @@ public class TestsDossierBancaire {
 		assertEquals(101.92,dossier.Consulter(),0);
 }
 	
+	@Test
+	public void Test_retrait_fonctionnel() throws Exception
+	{
+	DossierBancaire dossier=new DossierBancaire();
+	dossier.deposer(150);
+	dossier.retirer(20);
+	assertEquals(130,dossier.Consulter(),0);
+	}
+	@Test
+	public void Test_retrait_non_fonctionnel()
+	{
+	DossierBancaire dossier=new DossierBancaire();
+	dossier.deposer(100); // on ne depose que 40 sur le compte courant 
+	try {
+	dossier.retirer(41);
+	} catch (Exception e) {
+	fail("Echec du retrait car somme de retrait supéieur a celle du compte courant");
+	}
+	}
+	
 }
