@@ -5,7 +5,6 @@ public class Main {
     {
         DossierBancaire obj=new DossierBancaire();
         GUI g = new GUI(obj);
-        //System.out.println("Solde: " + obj.get_solde());             
     }
 
 }
