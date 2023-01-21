@@ -16,6 +16,8 @@ public class Compte_courant implements Compte{
 	
 	public double getsolde() {return _solde_cc;}
 	
+	public void retirer(double value) {_solde_cc = _solde_cc - value;}
+	
 	
 	
 	

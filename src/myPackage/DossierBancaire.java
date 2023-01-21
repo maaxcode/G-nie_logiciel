@@ -26,5 +26,14 @@ public class DossierBancaire {
     public void remunerer() {
     	ce.Remunérer();
     }
-	
-}
+    
+	public void retirer(double value) throws Exception 
+	{
+		if(value > cc.getsolde()) {
+			throw new Exception("Pas assez d’argent sur le compte bancaire pour retirer cette somme");
+			}else{
+			cc.retirer(value);
+			}
+	}
+			
+	}
