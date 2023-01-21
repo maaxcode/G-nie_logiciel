@@ -2,15 +2,29 @@ package myPackage;
 
 public class DossierBancaire {
 	
+	  
+	  private Compte_courant cc;
+	  private Compte_epargne ce;
+
 	//Constructeur
     public DossierBancaire()
     {
-    	m_solde=0;
+    	cc = new Compte_courant(0);
+    	ce = new Compte_epargne(0);
     }
 
-    public void deposer(double value) {m_solde+=value;}
-    public double get_solde() {return m_solde;}
-    public void remunerer() {}
+    public void deposer(double value) 
+    {
+    	cc.Addsolde(0.4*value);
+    	ce.Addsolde(0.6*value);
+    	
+    }
+    public double Consulter() {
+    	return cc.getsolde()+ce.getsolde();
+    	}
+    
+    public void remunerer() {
+    	ce.Remunérer();
+    }
 	
-    private double m_solde;
 }

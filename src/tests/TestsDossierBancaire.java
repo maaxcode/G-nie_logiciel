@@ -3,6 +3,7 @@ package tests;
 import static org.junit.Assert.*;
 
 import myPackage.Compte_courant;
+import myPackage.Compte_epargne;
 import myPackage.DossierBancaire;
 
 import org.junit.Test;
@@ -23,7 +24,7 @@ public class TestsDossierBancaire {
 	{
 		DossierBancaire dossier=new DossierBancaire();
 		dossier.deposer(100);
-		assertEquals(100,dossier.get_solde(),0);
+		assertEquals(100,dossier.Consulter(),0);
 
 }
 	
@@ -31,7 +32,7 @@ public class TestsDossierBancaire {
 	public void test_getsolde()
 	{
 		DossierBancaire dossier=new DossierBancaire();
-		assertEquals(0,dossier.get_solde(),0);
+		assertEquals(0,dossier.Consulter(),0);
 
 }
 	
@@ -53,5 +54,22 @@ public class TestsDossierBancaire {
 			
 }
 	
+	@Test
+	public void constructeur_ce()
+	{
+			
+		Compte_epargne ce = new Compte_epargne(20);
+		assertEquals(20,ce.getsolde(),0);
+}
+	
+	@Test
+	public void remunerer()
+	{
+			
+		DossierBancaire dossier=new DossierBancaire();
+		dossier.deposer(100);
+		dossier.remunerer();
+		assertEquals(101.92,dossier.Consulter(),0);
+}
 	
 }
