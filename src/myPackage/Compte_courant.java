@@ -1,6 +1,6 @@
 package myPackage;
 
-public class Compte_courant {
+public class Compte_courant implements Compte{
 	
 	private double _solde_cc;
 
